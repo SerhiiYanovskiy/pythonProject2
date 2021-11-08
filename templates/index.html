@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>URL Shortener</title>
+    </head>
+    <body>
+        {% if url %}
+            {% if is_valid %}
+            <a href="/{{ url_key }}"> {{ url_key }} </a>
+            {% else %}
+            {{ url }}. does not contain permitted schemas: https,http,ftp
+            {% endif %}
+        {% endif %}
+        <form action="" method="POST">
+            <input type="text" name="url">
+            <input type="submit">
+        </form>
+    </body>
+</html>
